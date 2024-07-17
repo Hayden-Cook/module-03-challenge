@@ -11,7 +11,7 @@ const collectEmployees = function() {
   while(addNewEmployee) {
     const firstName = prompt('What is the new employees first name?')
     const lastName = prompt('What is the new employees last name?')
-    let salary = prompt('What is the new employees salary?')
+    const salary = prompt('What is the new employees salary?')
   }
 }
 // this creates an employee object that specifies the contents
@@ -29,16 +29,32 @@ const addAnotherEmployee = confirm("Would you like to add another employee?")
 if (!addAnotherEmployee){
   addAnotherEmployee = false;
 }
+return employeesArray;
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  for (let i = 0; i < employeesArray.length; i++){
+    sum += employeesArray[i].salary
+  }
+  let average = sum / employeesArray.length
+  // the next line will log the average salary of all the employees
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is: $${average}.`)
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  const randomEmployeeGroup = Math.floor(Math.random() * employeesArray.length);
+  const randomEmployee = employeesArray[randomEmployeeGroup];
 }
+
+//this will log the random employee's name in the console
+console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
+
+// this will sort the employees alphebetically by last name.
+employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
+return employeesArray;
 
 /*
   ====================
