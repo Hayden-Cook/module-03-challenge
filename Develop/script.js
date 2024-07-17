@@ -23,6 +23,13 @@ const employee = {
 // this adds/pushes the employee details/content into the array
 employeesArray.push(employee);
 
+// acceptance criteria states we need a message afterwards asking if they would like to continue.
+// create an object that asks the user if they want to add another user. If yes, repeat adding an employee, if no, end text box. 
+const addAnotherEmployee = confirm("Would you like to add another employee?")
+if (!addAnotherEmployee){
+  addAnotherEmployee = false;
+}
+
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
