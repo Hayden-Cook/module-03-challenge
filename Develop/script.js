@@ -7,7 +7,7 @@ const collectEmployees = function() {
   // created an array to hold the employee's information
   let employeesArray = [];
   let addNewEmployee = true;
-  // use const on first and last name because it won't change. use let on salary so it can be adjusted as needed in the future.
+  // enter while loop mentioned in module 3 challenege criteria
   while(addNewEmployee) {
     const employee = {
       firstName: prompt('What is the new employees first name?'),
@@ -15,6 +15,8 @@ const collectEmployees = function() {
       salary: prompt('What is the new employees salary?'),
     };
     employeesArray.push(employee);
+    // acceptance criteria states we need a message afterwards asking if they would like to continue.
+    // create an object that asks the user if they want to add another user. If yes, repeat adding an employee, if no, end text box.
     const addAnotherEmployee = confirm("Would you like to add another employee?");
     if (!addAnotherEmployee){
       addNewEmployee = false;
@@ -30,10 +32,8 @@ const collectEmployees = function() {
 //}
 // this adds/pushes the employee details/content into the array
 //employeesArray.push(employee); (MOVED THIS TO BE INSIDE OF THE COLLECTEMPLOYEES FUNCTION)
-
-// acceptance criteria states we need a message afterwards asking if they would like to continue.
-// create an object that asks the user if they want to add another user. If yes, repeat adding an employee, if no, end text box. 
-//let addAnotherEmployee = confirm("Would you like to add another employee?"); MOVED THIS UP
+// MOVED THIS SECTION UP AS WELL
+//let addAnotherEmployee = confirm("Would you like to add another employee?"); 
 //if (!addAnotherEmployee){
   //addAnotherEmployee = false;
 //}
@@ -54,6 +54,7 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  // Math.floor should help with rounding to a whole number
   const randomEmployeeGroup = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomEmployeeGroup];
   //this will log the random employee's name in the console
@@ -62,6 +63,7 @@ console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.las
 employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
 };
 
+// MOVED THE BELOW SECTIONS UP. COMMENTED OUT.
 //this will log the random employee's name in the console
 //console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
 
