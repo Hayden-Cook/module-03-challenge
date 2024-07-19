@@ -5,56 +5,69 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   // created an array to hold the employee's information
-  const employeesArray = [];
+  let employeesArray = [];
   let addNewEmployee = true;
   // use const on first and last name because it won't change. use let on salary so it can be adjusted as needed in the future.
   while(addNewEmployee) {
-    const firstName = prompt('What is the new employees first name?')
-    const lastName = prompt('What is the new employees last name?')
-    const salary = prompt('What is the new employees salary?')
+    const employee = {
+      firstName: prompt('What is the new employees first name?'),
+      lastName: prompt('What is the new employees last name?'),
+      salary: prompt('What is the new employees salary?'),
+    };
+    employeesArray.push(employee);
+    const addAnotherEmployee = confirm("Would you like to add another employee?");
+    if (!addAnotherEmployee){
+      addNewEmployee = false;
+    }
   }
+  return employeesArray;
 }
-// this creates an employee object that specifies the contents
-const employee = {
-  firstName: firstName,
-  lastName: lastName,
-  salary: salary,
-}
+// I ended up making it work without this part. Commented out to consolidate.
+//let employee = {
+  //firstName: firstName,
+  //lastName: lastName,
+  //salary: salary,
+//}
 // this adds/pushes the employee details/content into the array
-employeesArray.push(employee);
+//employeesArray.push(employee); (MOVED THIS TO BE INSIDE OF THE COLLECTEMPLOYEES FUNCTION)
 
 // acceptance criteria states we need a message afterwards asking if they would like to continue.
 // create an object that asks the user if they want to add another user. If yes, repeat adding an employee, if no, end text box. 
-const addAnotherEmployee = confirm("Would you like to add another employee?")
-if (!addAnotherEmployee){
-  addAnotherEmployee = false;
-}
-return employeesArray;
+//let addAnotherEmployee = confirm("Would you like to add another employee?"); MOVED THIS UP
+//if (!addAnotherEmployee){
+  //addAnotherEmployee = false;
+//}
+//return employeesArray;
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  let sum = 0;
   for (let i = 0; i < employeesArray.length; i++){
-    sum += employeesArray[i].salary
+    sum += employeesArray[i].salary;
   }
-  let average = sum / employeesArray.length
+  const average = sum / employeesArray.length;
   // the next line will log the average salary of all the employees
-  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is: $${average}.`)
-}
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is: $${average}.`);
+};
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
   const randomEmployeeGroup = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomEmployeeGroup];
-}
-
-//this will log the random employee's name in the console
+  //this will log the random employee's name in the console
 console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
-
 // this will sort the employees alphebetically by last name.
 employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
-return employeesArray;
+};
+
+//this will log the random employee's name in the console
+//console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
+
+// this will sort the employees alphebetically by last name.
+//employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
+//return employeesArray;
 
 /*
   ====================
