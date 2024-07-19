@@ -5,6 +5,7 @@ This week, I had the opportunity to use JavaScript to build an employee payroll 
 
 ## Demo Screenshot
 ![Demo Screenshot](https://github.com/Hayden-Cook/module-03-challenge/blob/main/Develop/Demo%20Screenshot.png)
+![Console Screenshot](https://github.com/Hayden-Cook/module-03-challenge/blob/main/Develop/Console%20Screenshot.png)
 
 ## Deployment Link
 
