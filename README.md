@@ -8,7 +8,8 @@ This week, I had the opportunity to use JavaScript to build an employee payroll 
 ![Console Screenshot](https://github.com/Hayden-Cook/module-03-challenge/blob/main/Develop/Console%20Screenshot.png)
 
 ## Deployment Link
-
+ https://hayden-cook.github.io/module-03-challenge/
+ 
 ## Credits
 Module 3 Challenge: "Getting Started"
 https://bootcampspot.instructure.com/courses/5982/assignments/83899?module_item_id=1293173
